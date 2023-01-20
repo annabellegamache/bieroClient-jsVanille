@@ -1,0 +1,31 @@
+
+<!-- l'affichage n'est pas ok ici -->
+{{! #data-filtre}}
+<select data-js-filtre>
+    <option value="0">Filtrer les options</option>
+    <option value="nom|ASC">Nom ordre alphabétique</option>
+    <option value="nom|DESC">Nom ordre alphabétique inverse</option> 
+    <option value="brasserie|ASC">Brasserie ordre alphabétique</option>
+    <option value="brasserie|DESC">Brasserie ordre alphabétique inverse</option>
+    <option value="note_moyenne|ASC">Note moins à meilleure</option>
+    <option value="note_moyenne|DESC">Note meilleure à moins</option>
+</select>
+{{! /data-filtre}}
+
+ <!-- value="brasserie|ASC" --> <!-- split sur le pipe| -->
+
+<div class=" grid grid--{{data.grid}}">
+    <!-- boucle en mustache-->
+    {{#data}}
+
+        <div class="tuile">
+            <a href="biere/{{id_biere}}">
+                <img src="{{image}}" alt="{{image}}">
+                <h2 class="title--secondary">{{nom}} </h2>
+                <h3 class="title--tertiary"> {{brasserie}} </h3> 
+                <p>Note : {{note_moyenne}} <small>({{note_nombre}})</small></p>
+            </a>
+        </div>
+
+    {{/data}}
+</div>

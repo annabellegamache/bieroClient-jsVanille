@@ -1,0 +1,29 @@
+ {{#data}}
+ <div class="biere">
+            <div class="biere__image" >
+                <img src="{{image}}" alt="{{nom}}">
+            </div>
+            <article class="biere__infos">
+                <h2 class="title--secondary">{{nom}}</h2>
+                <h3 class="title--tertiary">{{brasserie}}</h3>
+                <p>{{description}}</p>
+
+                <div> 
+                    <small> Note:{{note}}/5</small>
+                    <small>{{nombre}}</small>
+                </div>
+            </article> 
+</div>
+
+<div class="biere__commentaires">
+    {{^data.commentaire}}
+        <p>Aucun commentaire</p>
+    {{/data.commentaire}}
+    {{#data.commentaire}}
+    <hr>
+        <p class="pb-small">{{commentaire}}</p>
+        <small> - {{courriel}}</small>
+    {{/data.commentaire}}
+</div>
+{{/data}}
+   
